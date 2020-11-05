@@ -15,7 +15,6 @@
 	margin-top: 1rem;
 	height: 12.5vh;
 	width: 90%;
-	border-radius: 10px;
 	left: 5%;
 	border-bottom: 1px solid grey;
 	font-size: 1.2rem;
@@ -78,15 +77,10 @@
 	color: black;
 }
 
-.landing {
-	height: 100vh;
-	background-image: url('./images/programming-background.png');
-	background-size: cover;
-}
 
 .wrapper {
-	padding-top: 20vh;
-	width: 80%;
+	padding-top: 10vh;
+	width: 90%;
 	margin: auto;
 }
 
@@ -94,7 +88,14 @@
 	background-color: white;
 	padding: 2rem;
 	border-radius: 10px;
+	width: 100%;
 	text-align: center;
+	display: flex;
+	justify-content: space-between;
+}
+
+.items-left {
+	margin: 20vh auto;
 }
 
 .header {
@@ -105,11 +106,49 @@
 .sub-text {
 	font-size: 1.5rem;
 	font-weight: 100;
+	overflow: hidden;
+	padding: .2rem;
 }
 
-.sub-text::after {
-	content: '';
-	padding: 1px 1px;
-	width: 0;
+#top-line {
+	animation: line 1s ease infinite alternate-reverse;
+}
+
+#middle-line {
+	animation: line 1s ease infinite alternate-reverse;
+}
+
+#bottom-line {
+	animation: line 1s ease infinite alternate-reverse;
+}
+
+@keyframes line {
+	from {
+		opacity: 0;
+	}
+	to{
+		opacity: 1;
+	}
+}
+
+.typed-text {
+	font-weight: normal;
+	color: rgb(89, 121, 218);
+}
+.cursor {
+	display: inline-block;
+	width: 1px;
+	margin-left: .05rem;
 	background-color: rgb(89, 121, 218);
+	animation: blink 1s infinite;
+}
+.typing {
+	animation: none;
+}
+@keyframes blink {
+	0% {background-color: rgb(89, 121, 218);}
+	49% {background-color: rgb(89, 121, 218);}
+	50% {background-color: transparent;}
+	99% {background-color: transparent;}
+	100% {background-color: rgb(89, 121, 218);}
 }
