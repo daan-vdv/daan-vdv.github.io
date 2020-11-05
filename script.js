@@ -2,10 +2,10 @@ const typedText = document.querySelector('.typed-text');
 const cursor = document.querySelector('.cursor');
 
 const age = new Date().getFullYear() - 2006;
-const text = ['Daan', `${age} years old`, 'a programmer'];
+const text = ['Daan', `${age} Years old`, 'A Programmer'];
 const startDelay = 500;
-const typingDelay = 150;
-const erasingDelay = 100;
+const typingDelay = 100;
+const erasingDelay = 75;
 const newTextDelay = 2000;
 let textIndex = 0;
 let charIndex = 0;
@@ -44,3 +44,17 @@ const type = () => {
 	}
 };
 document.addEventListener('DOMContentLoaded', () => setTimeout(type, startDelay));
+
+const ageSpan = document.querySelector('.age');
+ageSpan.textContent = age;
+
+const arrow = document.querySelector('.big-arrow');
+
+window.onscroll = () => {
+	var currentScrollPos = window.pageYOffset;
+	if (currentScrollPos < 200) {
+		arrow.classList.add('show');
+	} else {
+		arrow.classList.remove('show');
+	}
+};
