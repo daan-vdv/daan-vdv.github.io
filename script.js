@@ -1,8 +1,7 @@
 const typedText = document.querySelector('.typed-text')
 const cursor = document.querySelector('.cursor')
 
-const date = new Date
-const age = date.getFullYear() - 2006
+const age = new Date().getFullYear() - 2006
 const text = ['Daan', `${age} years old`, 'a Programmer']
 const startDelay = 500
 const typingDelay = 100
