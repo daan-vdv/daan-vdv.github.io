@@ -1,7 +1,8 @@
 const typedText = document.querySelector('.typed-text');
 const cursor = document.querySelector('.cursor');
 
-const age = new Date().getFullYear() - 2006;
+const year = new Date().getFullYear();
+const age = year - 2006;
 const text = ['Daan', `${age} Years old`, 'A Programmer'];
 const startDelay = 500;
 const typingDelay = 100;
@@ -9,6 +10,9 @@ const erasingDelay = 75;
 const newTextDelay = 2000;
 let textIndex = 0;
 let charIndex = 0;
+
+const yearSpan = document.querySelector('.year');
+yearSpan.textContent = year;
 
 const addClass = () => {
 	cursor.classList.add('typing');
@@ -57,4 +61,18 @@ window.onscroll = () => {
 	} else {
 		arrow.classList.remove('show');
 	}
+};
+
+const burgerPress = () => {
+	const burger = document.querySelector('.burger');
+	const list = document.querySelector('.nav-items');
+	burger.classList.toggle('show-menu');
+	list.classList.toggle('show-menu');
+};
+
+const closeMenu = () => {
+	const burger = document.querySelector('.burger');
+	const list = document.querySelector('.nav-items');
+	burger.classList.remove('show-menu');
+	list.classList.remove('show-menu');
 };
